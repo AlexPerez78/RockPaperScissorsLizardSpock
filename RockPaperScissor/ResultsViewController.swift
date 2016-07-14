@@ -19,7 +19,7 @@ enum Shape: String {
     // Computers Randomizer function for his move
     static func randomShape() -> Shape {
         let shapes = ["Rock", "Paper", "Scissors", "Spock" , "Lizard"]    //Let shapes array contains three possible answers
-        let randomChoice = Int(arc4random_uniform(5)) //Random from 0 - 3
+        let randomChoice = Int(arc4random_uniform(5)) //Random from 0 - 4
         print(randomChoice)
         print("CPU Shape: " + shapes[randomChoice])
         return Shape(rawValue: shapes[randomChoice])! //Return one of the three values
@@ -69,7 +69,6 @@ class ResultsViewController: UIViewController {
             imageName = "\(opponentChoice.rawValue)_\(userChoice.rawValue)"
         }
         
-        //imageName = imageName.lowercaseString
         //Update Your Image and Text
         resultImage.image = UIImage(named: imageName)
         resultLabel.text = text
